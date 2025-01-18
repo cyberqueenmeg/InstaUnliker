@@ -47,18 +47,6 @@ class Unliker():
                                   'users']])  # used for filtering
 
 
-    def followerFilter(self, post):
-        return post['user']['username'] in self.following
-
-    def dogFilter(self, post):
-        user = post['user']['username']
-        if post['caption']:
-            caption = post['caption']['text']
-            return 'dog' in caption or 'dog' in user or 'corg' in caption or 'corg' in user
-        else:
-            return False
-
-
     def unlike(self, filters=[followerFilter], max_remove = 40):
         removed = 0
 
